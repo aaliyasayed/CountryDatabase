@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Table</title>
+  <link href="./style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="entries">
+    Show <select onchange="changeEntry(value)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+      <option value="25">25</option>
+    </select> entries
+  </div>
+
+  <table class="table table-bordered" id="countries">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Alpha3Code</th>
+        <th>Capital</th>
+        <th>Population</th>
+        <th>Area</th>
+      </tr>
+    </thead>
+    <tbody id="countries-body">
+    </tbody>
+  </table>
+
+  <div class="flex-center">
+    <button class="prev" onclick="prevPage()" id="btn-prev"><i class="fa fa-chevron-left"></i></button>
+    <div>Page: <span id="page"></span></div>
+    <button class="next" onclick="nextPage()" id="btn-next"><i class="fa fa-chevron-right"></i></button>
+  </div>
+
+</body>
+<script src="./script.js"></script>
+</html>

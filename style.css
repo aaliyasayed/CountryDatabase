@@ -1,0 +1,81 @@
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  padding: 20px;
+  margin: 0;
+  font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333333;
+  text-align: left;
+  background-color: #fff;
+}
+
+select {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fb3;
+  border-radius: 2px;
+  border: 0;
+  font-weight: 500;
+  padding: 12px 16px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button:focus {
+  outline: none;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.entries {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-spacing: 0;
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td, .table th {
+  padding: 12px;
+  vertical-align: top;
+}
+
+.table tbody td {
+  vertical-align: bottom;
+  border-bottom: 1px solid #dee2e6;
+}
