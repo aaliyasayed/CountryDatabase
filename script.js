@@ -4,6 +4,8 @@ var countries = [];
 let currentPage = 1;
 let recordsPerPage = 5;
 
+var sortFlag = true;
+
 renderCountries(currentPage);
 
 async function fetchData() {
@@ -18,7 +20,7 @@ async function fetchData() {
 
 async function renderCountries (currentPage) {
   var allCountriesData = await fetchData();
-  countries = allCountriesData.map((country, index) => [ index, country.name, country.alpha3Code, country.capital, country.population, country.area ]);
+  countries = allCountriesData.map((country, index) => [ index, country.name, country.alpha3Code, country.capital || '-', country.population || 0, country.area || 0 ]);
   changePage(currentPage);
 }
 
@@ -34,6 +36,26 @@ function nextPage() {
     currentPage++;
     changePage(currentPage);
   }
+}
+
+function compare(index, type) {
+  sortFlag = !sortFlag;
+  return function(a, b) {
+    if (type === 'desc') {
+      return a[index] < b[index] ? 1 : a[index] > b[index] ? -1 : 0;
+    } else {
+      return a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0;
+    }
+  };
+}
+
+function sortBy(index) {
+  if (sortFlag) {
+    countries = countries.sort(compare(index, 'desc'));
+  } else {
+    countries = countries.sort(compare(index, 'asc'));
+  }
+  changePage(currentPage);
 }
 
 function changePage(page) {
